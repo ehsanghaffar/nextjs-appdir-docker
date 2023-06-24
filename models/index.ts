@@ -1,0 +1,1 @@
+export { Recipe, type IRecipe } from './recipe'
