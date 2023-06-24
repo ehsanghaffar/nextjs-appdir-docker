@@ -1,13 +1,24 @@
-import {  Recipe } from "@/types/Recipe";
+// وارد کردن نوع داده Recipe از فایل types/Recipe
+import { Recipe } from "@/types/Recipe";
+
+// وارد کردن آیکون ArrowLeftIcon از فایل heroicons-react/24/solid
 import { ArrowLeftIcon } from "@heroicons/react/24/solid";
+
+// وارد کردن کامپوننت Link از فایل next/link
 import Link from "next/link";
+
+// وارد کردن کتابخانه React
 import React from "react";
+
+// وارد کردن کامپوننت Button از فایل ui/Button
 import Button from "./ui/Button";
 
+// تعریف ویژگی‌های RecipeCardProps
 interface RecipeCardProps {
   recipe: Recipe | any;
 }
 
+// تعریف کامپوننت RecipeCard
 const RecipeCard = ({ recipe }: RecipeCardProps) => {
   return (
     <>
@@ -39,4 +50,5 @@ const RecipeCard = ({ recipe }: RecipeCardProps) => {
   );
 };
 
+// صادر کردن کامپوننت RecipeCard به عنوان کامپوننت پیشفرض
 export default RecipeCard;

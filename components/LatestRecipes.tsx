@@ -1,19 +1,32 @@
+// استفاده از مودول کلاینت
 "use client";
+
+// وارد کردن کامپوننت RecipeCard از فایل RecipeCard
 import RecipeCard from "@/components/RecipeCard";
+
+// وارد کردن ماژول‌های React، useEffect و useState
 import React, { useEffect, useState } from "react";
+
+// وارد کردن نوع داده GetAllRecipesResponse از فایل types/Recipe
 import { GetAllRecipesResponse } from "@/types/Recipe";
+
+// وارد کردن کامپوننت SkeletonCard از فایل ui/Skeleton
 import SkeletonCard from "./ui/Skeleton";
 
+// تعریف ویژگی‌های LatestRecipesProps
 interface LatestRecipesProps {
   limitNumber: number;
 }
 
+// تعریف کامپوننت LatestRecipes
 const LatestRecipes = ({ limitNumber }: LatestRecipesProps) => {
+  // تعریف وضعیت های allRecipes و loading با استفاده از useState
   const [allRecipes, setAllRecipes] = useState<
     GetAllRecipesResponse[] | undefined
   >(undefined);
   const [loading, setLoading] = useState(true);
 
+  // تابع get_all_recipes برای دریافت همه‌ی رسپی‌ها
   const get_all_recipes = async () => {
     setLoading(true);
     try {
@@ -29,6 +42,7 @@ const LatestRecipes = ({ limitNumber }: LatestRecipesProps) => {
     }
   };
 
+  // استفاده از useEffect برای اجرای تابع get_all_recipes در زمان بارگیری صفحه
   useEffect(() => {
     get_all_recipes();
   }, []);
@@ -51,4 +65,5 @@ const LatestRecipes = ({ limitNumber }: LatestRecipesProps) => {
   );
 };
 
+// صادر کردن کامپوننت LatestRecipes به عنوان کامپوننت پیشفرض
 export default LatestRecipes;

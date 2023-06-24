@@ -1,8 +1,16 @@
+// وارد کردن کامپوننت LandingSection از فایل LandingSection
 import LandingSection from "@/components/LandingSection";
+
+// وارد کردن کامپوننت LatestRecipes از فایل LatestRecipes
 import LatestRecipes from "@/components/LatestRecipes";
+
+// وارد کردن کامپوننت HeaderBottom از فایل HeaderBottom
 import HeaderBottom from "@/components/HeaderBottom";
+
+// وارد کردن کامپوننت Button از فایل Button
 import Button from "@/components/ui/Button";
 
+// تعریف کامپوننت Home
 export default function Home() {
   return (
     <>

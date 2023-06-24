@@ -7,6 +7,7 @@ const options: any = {
   useNewUrlParser: true
 }
 
+// برقراری ارتباط با پایگاه داده MongoDB
 export const connectToDatabase = async () => {
   if (!connection.readyState) {
     console.log('Connecting to ', MONGO_URI)

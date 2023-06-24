@@ -1,7 +1,7 @@
 import { Recipe } from "@/models";
 import { NextResponse } from "next/server";
 
-
+// ایجاد درخواست GET برای دریافت رسپی بر اساس آی‌دی
 export async function GET(req: Request) {
   try {
     const { searchParams } = new URL(req.url);
@@ -11,11 +11,12 @@ export async function GET(req: Request) {
 
     const recipe = await Recipe.findOne({
       _id: id
-    })
+    });
+
     if (recipe) {
       return NextResponse.json({ status: 200, data: recipe });
     } else {
-      return NextResponse.json({ status: 204, success: false, message: 'No Product found.' });
+      return NextResponse.json({ status: 204, success: false, message: 'No recipe found.' });
     }
   } catch (error) {
     console.log('Error in getting recipe by id:', error);

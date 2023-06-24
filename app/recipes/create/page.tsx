@@ -1,13 +1,21 @@
-"use client";
+// کتابخانه‌های مورد استفاده در کامپوننت را وارد کنید
 import { ChangeEvent, FormEvent, useState } from "react";
 
-import {  CheckIcon } from "@heroicons/react/24/solid";
+// وارد کردن آیکون CheckIcon از کتابخانه heroicons/react
+import { CheckIcon } from "@heroicons/react/24/solid";
+
+// وارد کردن نوع IRecipCreate و Ingredients از مدل recipe
 import { IRecipCreate, Ingredients } from "@/models/recipe";
+
+// وارد کردن کامپوننت Button از مسیر "@/components/ui/Button"
 import Button from "@/components/ui/Button";
 
+// تعریف متغیر nextId با مقدار اولیه 0
 let nextId = 0;
 
+// تعریف کامپوننت CreateRecipe
 export default function CreateRecipe() {
+  // استفاده از useState برای تعریف و مدیریت وضعیت های مورد نیاز
   const [recipe, setRecipe] = useState<IRecipCreate>({
     name: "",
     description: "",
@@ -19,6 +27,7 @@ export default function CreateRecipe() {
   const [ingredients, setIngredients] = useState<Ingredients[]>([]);
   const [selectedPhoto, setSelectedPhoto] = useState<File | null>(null);
 
+  // تابع handlePhotoChange برای مدیریت تغییرات در ورودی عکس
   const handlePhotoChange = (event: ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files && event.target.files[0];
     if (file) {
@@ -26,14 +35,15 @@ export default function CreateRecipe() {
     }
   };
 
+  // تابع handleAddIngredient برای اضافه کردن ماده اولیه جدید به لیست مواد اولیه
   function handleAddIngredient() {
-    const insertAt = 1; // Could be any index
+    const insertAt = 1; // می‌تواند هر شاخصی باشد
     const nextIngredients = [
-      // Items before the insertion point:
+      // موارد قبل از شاخص درج:
       ...ingredients.slice(0, insertAt),
-      // New item:
+      // ماده اولیه جدید:
       { id: nextId++, name: singleIngredient },
-      // Items after the insertion point:
+      // موارد بعد از شاخص درج:
       ...ingredients.slice(insertAt),
     ];
     console.log("next", nextIngredients);
@@ -42,6 +52,7 @@ export default function CreateRecipe() {
     setSingleIngredient("");
   }
 
+  // تابع saveRecipe برای ارسال داده‌ها به سرور و ذخیره رسپی جدید
   const saveRecipe = async (event: FormEvent) => {
     event.preventDefault();
 
@@ -62,10 +73,13 @@ export default function CreateRecipe() {
         console.log(saveRecip);
       } catch (error) {
         console.log(error);
+
+
       }
     }
   };
 
+  // بخش رابط کاربری کامپوننت CreateRecipe
   return (
     <>
       <div className="container mx-auto p-4">
@@ -148,6 +162,8 @@ export default function CreateRecipe() {
                     >
                       <CheckIcon
                         className="flex-shrink-0 h-6 w-6 text-blue-600"
+
+
                         width={20}
                       />
                       <span className="text-gray-800 dark:text-gray-600">

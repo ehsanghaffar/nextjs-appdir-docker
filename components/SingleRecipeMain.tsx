@@ -1,13 +1,20 @@
+// وارد کردن نوع داده Ingredients از مدل recipe
 import { Ingredients } from "@/models/recipe";
+
+// وارد کردن آیکون CheckCircleIcon از فایل heroicons-react/24/solid
 import { CheckCircleIcon } from "@heroicons/react/24/solid";
+
+// وارد کردن کتابخانه React
 import React from "react";
 
+// تعریف ویژگی‌های SingleRecipeMainProps
 interface SingleRecipeMainProps {
   recipePhoto?: string | any;
   recipeIngredients?: Ingredients[];
   recipeSteps?: string;
 }
 
+// تعریف کامپوننت SingleRecipeMain
 const SingleRecipeMain = ({
   recipePhoto,
   recipeIngredients,
@@ -55,4 +62,5 @@ const SingleRecipeMain = ({
   );
 };
 
+// صادر کردن کامپوننت SingleRecipeMain به عنوان کامپوننت پیشفرض
 export default SingleRecipeMain;
