@@ -1,17 +1,11 @@
-// استفاده از مودول کلاینت
 "use client";
-
-// وارد کردن کامپوننت RecipeCard از فایل RecipeCard
-import RecipeCard from "@/components/RecipeCard";
 
 // وارد کردن ماژول‌های React، useEffect و useState
 import React, { useEffect, useState } from "react";
-
-// وارد کردن نوع داده GetAllRecipesResponse از فایل types/Recipe
-import { GetAllRecipesResponse } from "@/types/Recipe";
-
-// وارد کردن کامپوننت SkeletonCard از فایل ui/Skeleton
+import { GetAllRecipesResponse } from "../types/Recipe";
+import RecipeCard from "./RecipeCard";
 import SkeletonCard from "./ui/Skeleton";
+
 
 // تعریف ویژگی‌های LatestRecipesProps
 interface LatestRecipesProps {

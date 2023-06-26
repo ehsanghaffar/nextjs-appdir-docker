@@ -1,11 +1,8 @@
-// وارد کردن نوع داده Ingredients از مدل recipe
-import { Ingredients } from "@/models/recipe";
-
-// وارد کردن آیکون CheckCircleIcon از فایل heroicons-react/24/solid
-import { CheckCircleIcon } from "@heroicons/react/24/solid";
 
 // وارد کردن کتابخانه React
 import React from "react";
+import { Ingredients } from "../models/recipe";
+import { CheckCircleIcon } from "@heroicons/react/24/solid";
 
 // تعریف ویژگی‌های SingleRecipeMainProps
 interface SingleRecipeMainProps {

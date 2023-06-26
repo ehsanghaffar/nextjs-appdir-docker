@@ -1,9 +1,3 @@
-// وارد کردن نوع داده Recipe از فایل types/Recipe
-import { Recipe } from "@/types/Recipe";
-
-// وارد کردن آیکون ArrowLeftIcon از فایل heroicons-react/24/solid
-import { ArrowLeftIcon } from "@heroicons/react/24/solid";
-
 // وارد کردن کامپوننت Link از فایل next/link
 import Link from "next/link";
 
@@ -12,6 +6,8 @@ import React from "react";
 
 // وارد کردن کامپوننت Button از فایل ui/Button
 import Button from "./ui/Button";
+import { Recipe } from "../types/Recipe";
+import { ArrowLeftIcon } from "@heroicons/react/24/solid";
 
 // تعریف ویژگی‌های RecipeCardProps
 interface RecipeCardProps {

@@ -1,8 +1,8 @@
-import { ArrowLeftIcon } from "@heroicons/react/24/solid";
 import React from "react";
 import Link from "next/link";
 import HeaderLeftImage from '../public/header-leftt.png'
 import Image from "next/image";
+import { ArrowLeftIcon } from "@heroicons/react/24/solid";
 
 const HeaderBottom: React.FC = () => {
 

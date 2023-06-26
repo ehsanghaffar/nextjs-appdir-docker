@@ -1,9 +1,9 @@
 "use client"
+import { useParams } from "next/navigation";
+import React, { useEffect, useState } from "react";
 import SingleRecipeMain from "../../../components/SingleRecipeMain";
 import SingleRecipeTopSection from "../../../components/SingleRecipeTopSection";
 import { IRecipCreate } from "../../../models/recipe";
-import { useParams } from "next/navigation";
-import React, { useEffect, useState } from "react";
 
 // کامپوننت SingleRecipe که اطلاعات یک رسپی را نمایش می‌دهد
 const SingleRecipe = () => {

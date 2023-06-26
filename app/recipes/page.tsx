@@ -1,6 +1,6 @@
+import React from "react";
 import LatestRecipes from "../../components/LatestRecipes";
 import SingleRecipeTopSection from "../../components/SingleRecipeTopSection";
-import React from "react";
 
 // کامپوننت Recipes که لیست رسپی‌ها را نمایش می‌دهد
 const Recipes = () => {

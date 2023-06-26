@@ -1,9 +1,10 @@
-import mime from "mime";
-import { connectToDatabase } from '@/lib/mongodb';
+
 import { NextResponse } from 'next/server';
-import { Recipe } from '@/models/index'
 import { join } from "path";
 import { stat, writeFile } from "fs/promises";
+import { connectToDatabase } from "../../../lib/mongodb";
+import { Recipe } from "../../../models";
+import mime from 'mime';
 
 connectToDatabase();
 
