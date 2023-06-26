@@ -17,7 +17,7 @@ services:
     build: .
     volumes:
       - .:/usr/src/app
-    command: npm run start
+    command: npm run launch
     ports:
       - "3000:3000"
     environment:
