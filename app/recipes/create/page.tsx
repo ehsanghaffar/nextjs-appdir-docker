@@ -1,3 +1,4 @@
+"use client"
 // کتابخانه‌های مورد استفاده در کامپوننت را وارد کنید
 import { ChangeEvent, FormEvent, useState } from "react";
 

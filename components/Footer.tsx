@@ -1,6 +1,7 @@
 import React from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTwitter } from '@fortawesome/free-brands-svg-icons'
+import Link from "next/link";
 
 
 const Footer: React.FC = () => {
@@ -19,29 +20,24 @@ const Footer: React.FC = () => {
             <h4 className="footer-title">بخش های سایت</h4>
             <ul>
               <li>
-                <a href="#header" className="footer-pages-links">
+                <Link href={'/'} className="footer-pages-links">
                   صفحه اصلی
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#recipes" className="footer-pages-links">
+                <Link href={'/recipes'} className="footer-pages-links">
                   رسپی ها
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#aboutus" className="footer-pages-links">
+                <Link href={'/about'} className="footer-pages-links">
                   درباره ما
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#contactus" className="footer-pages-links">
+                <Link href={'/contact'} className="footer-pages-links">
                   ارتباط با ما
-                </a>
-              </li>
-              <li>
-                <a href="#subscribe" className="footer-pages-links">
-                  خبرنامه
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -68,11 +64,11 @@ const Footer: React.FC = () => {
           </div>
 
           <div className="footer-contactus">
-            <h4 className="footer-title">تماس با ما</h4>
+            <h4 className="footer-title mb-2">تماس با ما</h4>
             <p className="footer-contactus-sub">ایمیل</p>
             <p className="footer-contactus-des">denizpaz.desserts@gmail.com</p>
             <p className="footer-contactus-sub">تلفن</p>
-            <p className="footer-contactus-des">0936-7596868</p>
+            <p className="footer-contactus-des">0XXX-XXXXXX</p>
             <p className="footer-contactus-sub">آدرس</p>
             <p className="footer-contactus-des">کرج - مهرشهر</p>
           </div>

@@ -1,3 +1,4 @@
+"use client"
 import SingleRecipeMain from "@/components/SingleRecipeMain";
 import SingleRecipeTopSection from "@/components/SingleRecipeTopSection";
 import { IRecipCreate } from "@/models/recipe";
