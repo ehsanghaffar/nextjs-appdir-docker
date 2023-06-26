@@ -1,4 +1,4 @@
-import { Recipe } from "@/models";
+import { Recipe } from "../../../../models";
 import { NextResponse } from "next/server";
 
 // ایجاد درخواست GET برای دریافت رسپی بر اساس آی‌دی

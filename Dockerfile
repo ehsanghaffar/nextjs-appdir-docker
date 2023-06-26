@@ -24,4 +24,4 @@ RUN npm run build
 
 EXPOSE 3000
 
-CMD npm run launch
+CMD npm run start

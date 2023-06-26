@@ -1,17 +1,12 @@
 "use client"
-// کتابخانه‌های مورد استفاده در کامپوننت را وارد کنید
 import { ChangeEvent, FormEvent, useState } from "react";
 
-// وارد کردن آیکون CheckIcon از کتابخانه heroicons/react
+
+import { IRecipCreate, Ingredients } from "../../../models/recipe";
+
+import Button from "../../../components/ui/Button";
 import { CheckIcon } from "@heroicons/react/24/solid";
 
-// وارد کردن نوع IRecipCreate و Ingredients از مدل recipe
-import { IRecipCreate, Ingredients } from "@/models/recipe";
-
-// وارد کردن کامپوننت Button از مسیر "@/components/ui/Button"
-import Button from "@/components/ui/Button";
-
-// تعریف متغیر nextId با مقدار اولیه 0
 let nextId = 0;
 
 // تعریف کامپوننت CreateRecipe

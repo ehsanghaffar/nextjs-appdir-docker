@@ -1,7 +1,7 @@
 "use client"
-import SingleRecipeMain from "@/components/SingleRecipeMain";
-import SingleRecipeTopSection from "@/components/SingleRecipeTopSection";
-import { IRecipCreate } from "@/models/recipe";
+import SingleRecipeMain from "../../../components/SingleRecipeMain";
+import SingleRecipeTopSection from "../../../components/SingleRecipeTopSection";
+import { IRecipCreate } from "../../../models/recipe";
 import { useParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
 
