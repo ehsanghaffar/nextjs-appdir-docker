@@ -42,6 +42,7 @@ const SingleRecipe = () => {
       <SingleRecipeTopSection
         recipeName={singleRecipe?.name}
         recipeDesc={singleRecipe?.description}
+        sectionBackground="/recipe-header.jpg"
       />
       {/* استفاده از کامپوننت SingleRecipeMain برای نمایش بخش اصلی رسپی */}
       <SingleRecipeMain

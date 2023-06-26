@@ -5,12 +5,14 @@ import React from "react";
 interface SingleRecipeTopSectionProps {
   recipeName?: string;
   recipeDesc?: string;
+  sectionBackground?: string;
 }
 
 // تعریف کامپوننت SingleRecipeTopSection
 const SingleRecipeTopSection = ({
   recipeName,
   recipeDesc,
+  sectionBackground
 }: SingleRecipeTopSectionProps) => {
   return (
     <>
@@ -18,7 +20,7 @@ const SingleRecipeTopSection = ({
         <div className="recipe-header-pic">
           <img
             className="recipe-header-img"
-            src="/recipe-header.jpg"
+            src={sectionBackground}
             alt="header"
           />
         </div>
