@@ -15,6 +15,7 @@ COPY . /usr/src/app
 # install dependencies
 
 RUN npm install -g next
+RUN npm install -g @heroicons/react
 
 RUN npm install
 
