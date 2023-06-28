@@ -1,17 +1,22 @@
 version: "3.8"
 services:
   web:
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        ENV_VARIABLE: ${ENV_VARIABLE}
+        NEXT_PUBLIC_ENV_VARIABLE: ${NEXT_PUBLIC_ENV_VARIABLE}
     volumes:
-      - .:/usr/src/app
-      - /usr/src/app/node_modules
-      - /usr/src/app/.next
-      - /usr/src/app/public
+      - .:/app
+      - ./public:/app/public
+      # - /app/node_modules
+      # - /app/.next
     command: npm run launch
+    restart: always
     ports:
-      - "3000:3000"
+      - "${PORT}:${PORT}"
     environment:
-      NODE_ENV: production
       DB_LOCAL_URL: mongodb://mongo:27017/denizpazs
     depends_on:
       - mongo
@@ -30,8 +35,8 @@ services:
 
 networks:
   asgard:
-    ipam:
-      driver: default
+    external: true
 
 volumes:
   data:
+    driver: local
