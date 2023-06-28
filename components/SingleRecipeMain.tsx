@@ -17,8 +17,6 @@ const SingleRecipeMain = ({
   recipeIngredients,
   recipeSteps,
 }: SingleRecipeMainProps) => {
-  // console.log(JSON.parse(recipeIngredients));
-
   return (
     <>
       <div className="md:container md:mx-auto">

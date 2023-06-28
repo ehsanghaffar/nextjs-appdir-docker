@@ -26,10 +26,10 @@ const RecipeCard = ({ recipe }: RecipeCardProps) => {
             className="rounded-t-lg w-full h-[220px]"
           />
           <div className="relative w-full p-4 bg-white">
-            <p className="mb-2 text-xl font-medium text-gray-800">
+            <p className="mb-2 text-lg font-medium text-gray-800">
               {recipe?.name}
             </p>
-            <p className="text-xs text-gray-600">{recipe?.description}</p>
+            <p className="text-xs text-gray-600">{recipe?.description.substring(0, 60)}...</p>
             <div className="flex flex-wrap items-center mt-6 justify-starts">
               <Button
                 type="button"

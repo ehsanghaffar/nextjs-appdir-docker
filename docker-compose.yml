@@ -1,27 +1,18 @@
 version: "3.8"
 services:
-  # nginx:
-  #   container_name: nginx
-  #   image: nginx:alpine
-  #   ports:
-  #     - 80:80
-  #     - 443:443
-  #   volumes:
-  #     - ./nginx/conf.d:/etc/nginx
-  #     - ./nginx/certs:/etc/ssl/private
-  #   extra_hosts:
-  #     - "host.docker.internal:host-gateway"
-  #   restart: always
-
   web:
     build: .
     volumes:
       - .:/usr/src/app
+      - /usr/src/app/node_modules
+      - /usr/src/app/.next
+      - /usr/src/app/public
     command: npm run launch
     ports:
       - "3000:3000"
     environment:
-      NODE_ENV: development
+      NODE_ENV: production
+      DB_LOCAL_URL: mongodb://mongo:27017/denizpazs
     depends_on:
       - mongo
     networks:
@@ -30,11 +21,8 @@ services:
   mongo:
     container_name: mongo
     image: mongo:latest
-    environment:
-      - MONGO_INITDB_ROOT_USERNAME=root
-      - MONGO_INITDB_ROOT_PASSWORD=root
     volumes:
-      - ./data/db:/data/db
+      - data:/data/db
     ports:
       - "27017:27017"
     networks:
@@ -44,3 +32,6 @@ networks:
   asgard:
     ipam:
       driver: default
+
+volumes:
+  data:

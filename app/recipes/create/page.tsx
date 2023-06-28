@@ -19,6 +19,7 @@ export default function CreateRecipe() {
   const [singleIngredient, setSingleIngredient] = useState("");
   const [ingredients, setIngredients] = useState<Ingredients[]>([]);
   const [selectedPhoto, setSelectedPhoto] = useState<File | null>(null);
+  const [loading, setLoading] = useState(true)
 
   // تابع handlePhotoChange برای مدیریت تغییرات در ورودی عکس
   const handlePhotoChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -48,7 +49,7 @@ export default function CreateRecipe() {
   // تابع saveRecipe برای ارسال داده‌ها به سرور و ذخیره رسپی جدید
   const saveRecipe = async (event: FormEvent) => {
     event.preventDefault();
-
+    setLoading(true)
     if (selectedPhoto) {
       const formData = new FormData();
       formData.append("photo", selectedPhoto);
@@ -63,11 +64,13 @@ export default function CreateRecipe() {
       };
       try {
         const saveRecip = await fetch("/api/recipes", options);
-        console.log(saveRecip);
+        setLoading(false)
+        if (saveRecip.status === 200) {
+          console.log(saveRecip);
+        }
       } catch (error) {
+        setLoading(false)
         console.log(error);
-
-
       }
     }
   };
@@ -82,11 +85,10 @@ export default function CreateRecipe() {
               <div className="text-center w-full mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8 z-20">
                 <h2 className="text-3xl font-extrabold text-black dark:text-white sm:text-4xl">
                   <span className="text-gray-600">
-                    اون رسپی که میخوای نیست؟
+                    اضافه کردن رسپی جدید
                   </span>
-                  <span className="block text-indigo-500">
-                    خودت اضافه اش کن
-                  </span>
+                  {/* <span className="block text-indigo-500">
+                  </span> */}
                 </h2>
               </div>
             </div>
@@ -182,7 +184,7 @@ export default function CreateRecipe() {
                   type="submit"
                   className="w-96 py-3 px-4 inline-flex justify-center items-center gap-2 rounded-md border border-transparent font-semibold bg-cyan-700 text-white hover:bg-cyan-500 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2 transition-all text-sm"
                 >
-                  <span>اضافه کن</span>
+                  <span>ساخت رسپی</span>
                 </Button>
               </div>
             </form>

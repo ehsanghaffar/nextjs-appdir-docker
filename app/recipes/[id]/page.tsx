@@ -12,29 +12,21 @@ const SingleRecipe = () => {
     undefined
   );
 
-  // دریافت رسپی با استفاده از شناسه
+  useEffect(() => {
+     // دریافت رسپی با استفاده از شناسه
   const get_recipe_by_id = async (id: string) => {
     try {
       const res = await fetch(`/api/recipes/get-single-recipe?id=${id}`, {
         method: "GET",
-        // headers: {
-        //   "Content-Type": "application/json",
-        // },
       });
-
       const data = await res.json();
       setSingleRecipe(data.data);
-      return data;
     } catch (error) {
       console.log("Error in getting product by ID (service) =>", error);
     }
   };
-
-  useEffect(() => {
     get_recipe_by_id(id); // دریافت رسپی با استفاده از شناسه بعد از بارگذاری کامپوننت
   }, []);
-
-  console.log(singleRecipe); // نمایش اطلاعات رسپی در کنسول
 
   return (
     <>

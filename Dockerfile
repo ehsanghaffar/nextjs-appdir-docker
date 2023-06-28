@@ -1,27 +1,22 @@
-# base image
-
 FROM node:18-alpine
-
-# create & set working directory
 
 RUN mkdir -p /usr/src/app
 
 WORKDIR /usr/src/app
 
-# copy source files
-
-COPY . /usr/src/app
-
-# install dependencies
+COPY package.json /usr/src/app/
 
 RUN npm install -g next
-RUN npm install -g @heroicons/react
 
 RUN npm install
 
-# start app
+COPY . /usr/src/app
 
 RUN npm run build
+
+COPY --chown=10101 ./public /usr/src/app/public
+
+ENV DB_LOCAL_URL=mongodb://mongo:27017/denizpaz
 
 EXPOSE 3000
 

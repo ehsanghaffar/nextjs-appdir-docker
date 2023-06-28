@@ -51,7 +51,7 @@ export async function POST(req: Request) {
     console.log("recipe", newRecipe)
     const recipe = new Recipe(newRecipe);
     const save = await recipe.save();
-    return NextResponse.json(save);
+    return NextResponse.json({ status: 200, data: save });
   } catch (error) {
     console.log(error);
     return NextResponse.json('error', {
