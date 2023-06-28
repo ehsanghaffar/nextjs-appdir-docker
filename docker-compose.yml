@@ -3,11 +3,10 @@ services:
   web:
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: develop.Dockerfile
       args:
         ENV_VARIABLE: ${ENV_VARIABLE}
         NEXT_PUBLIC_ENV_VARIABLE: ${NEXT_PUBLIC_ENV_VARIABLE}
-    command: npm run launch
     restart: always
     ports:
       - "${PORT}:${PORT}"
