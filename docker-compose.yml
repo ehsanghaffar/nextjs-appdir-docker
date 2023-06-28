@@ -7,11 +7,6 @@ services:
       args:
         ENV_VARIABLE: ${ENV_VARIABLE}
         NEXT_PUBLIC_ENV_VARIABLE: ${NEXT_PUBLIC_ENV_VARIABLE}
-    volumes:
-      - .:/app
-      - ./public:/app/public
-      # - /app/node_modules
-      # - /app/.next
     command: npm run launch
     restart: always
     ports:
