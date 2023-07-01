@@ -379,12 +379,12 @@ html {
 .recipe-link:hover {
   background-color: #12232b;
 }
-
+/* 
 .recipe-link-img {
   transform: rotate(180deg);
   width: 1.3rem;
   padding-left: 0.4rem;
-}
+} */
 
 .all-recipe-link {
   font-size: 1.7rem;
@@ -409,13 +409,13 @@ html {
 
 /* about us section */
 
-#aboutus {
-  /* background-image: url(/images/aboutus.jpg); */
+/* #aboutus {
+  background-image: url(/images/aboutus.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
   padding: 1.5rem 0;
-}
+} */
 
 #aboutus .section-title {
   margin: 0;
@@ -550,13 +550,13 @@ html {
 }
 
 
-
+/* 
 .subscribe-img {
-  /* background-image: url(/images/subsc.jpg); */
+  background-image: url(/images/subsc.jpg);
   background-size: cover;
   height: 20rem;
   border-radius: 5rem;
-}
+} */
 
 .subscribe-input {
   border: none;
@@ -597,12 +597,12 @@ html {
   background-color: #f9f8f8;
 }
 
-.footer .svg-bg {
+/* .footer .svg-bg {
   position: absolute;
   z-index: -1;
   bottom: 23.8rem;
   width: 100%;
-}
+} */
 
 .footer {
   display: flex;
@@ -817,7 +817,7 @@ html {
   border-top-right-radius: 2.5rem;
   border-top-left-radius: 2.5rem;
   padding: 1.5rem 1rem;
-  top: 11.76rem;
+  top: 8rem;
   right: 15%;
   position: absolute;
 }

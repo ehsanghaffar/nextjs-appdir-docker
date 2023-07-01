@@ -1,7 +1,7 @@
 import mongoose, { connect, connection } from 'mongoose'
 
 // const { MONGODB = 'mongodb://root:root@localhost:27017/?authSource=admin&readPreference=primary&appname=MongoDB%20Compass&ssl=false' } = process.env;
-const DATABASE = process.env.DB_LOCAL_URL || 'mongodb://mongo:27017/denizpaz'
+const DATABASE = "mongodb+srv://ghafari5000:Eindev5000@cluster1.lxbrxtw.mongodb.net/?retryWrites=true&w=majority"
 const options: any = {
   useUnifiedTopology: true,
   useNewUrlParser: true
