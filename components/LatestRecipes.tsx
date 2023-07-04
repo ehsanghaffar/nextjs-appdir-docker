@@ -19,7 +19,6 @@ const LatestRecipes = ({ limitNumber }: LatestRecipesProps) => {
     GetAllRecipesResponse[] | undefined
   >(undefined);
   const [loading, setLoading] = useState(true);
-
   // تابع get_all_recipes برای دریافت همه‌ی رسپی‌ها
   const get_all_recipes = async () => {
     setLoading(true);

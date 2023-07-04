@@ -8,6 +8,7 @@ import React from "react";
 import Button from "./ui/Button";
 import { Recipe } from "../types/Recipe";
 import { ArrowLeftIcon } from "@heroicons/react/24/solid";
+import path from "path";
 
 // تعریف ویژگی‌های RecipeCardProps
 interface RecipeCardProps {
@@ -16,6 +17,7 @@ interface RecipeCardProps {
 
 // تعریف کامپوننت RecipeCard
 const RecipeCard = ({ recipe }: RecipeCardProps) => {
+  
   return (
     <>
       <Link href={`recipes/${recipe?._id}`}>

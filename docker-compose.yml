@@ -8,6 +8,10 @@ services:
         ENV_VARIABLE: ${ENV_VARIABLE}
         NEXT_PUBLIC_ENV_VARIABLE: ${NEXT_PUBLIC_ENV_VARIABLE}
     restart: always
+    volumes:
+      - ./:/app
+      - /app/node_modules
+      - /app/.next
     ports:
       - "${PORT}:${PORT}"
     environment:
