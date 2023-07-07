@@ -1,8 +1,6 @@
 import mongoose, { connect, connection } from 'mongoose'
 
-// const { MONGODB = 'mongodb://root:root@localhost:27017/?authSource=admin&readPreference=primary&appname=MongoDB%20Compass&ssl=false' } = process.env;
-// const DATABASE = "mongodb+srv://ghafari5000:Eindev5000@cluster1.lxbrxtw.mongodb.net/?retryWrites=true&w=majority"
-const DATABASE = "mongodb://mongo:27017/denizpazs"
+const DATABASE = "mongodb://mongo:27017/denizpaz"
 const options: any = {
   useUnifiedTopology: true,
   useNewUrlParser: true
@@ -12,7 +10,7 @@ const options: any = {
 export const connectToDatabase = async () => {
   if (!connection.readyState) {
     // console.log('Connecting to ', DATABASE)
-    await mongoose.connect(DATABASE, options)
+    await mongoose.connect(DATABASE || "mongodb://mongo:27017/denizpaz", options)
     .then((c) => {
       console.log("Mongo Connected: ")
     })

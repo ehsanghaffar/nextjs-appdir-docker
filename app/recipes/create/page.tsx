@@ -1,5 +1,5 @@
 "use client"
-import { CheckIcon } from "@heroicons/react/24/solid";
+import { CheckIcon, InboxArrowDownIcon } from "@heroicons/react/24/solid";
 import { ChangeEvent, FormEvent, useState } from "react";
 import Button from "../../../components/ui/Button";
 import { IRecipCreate, Ingredients } from "../../../models/recipe";
@@ -19,7 +19,8 @@ export default function CreateRecipe() {
   const [singleIngredient, setSingleIngredient] = useState("");
   const [ingredients, setIngredients] = useState<Ingredients[]>([]);
   const [selectedPhoto, setSelectedPhoto] = useState<File | null>(null);
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(false)
+  const [apiMessage, setApiMessage] = useState("")
 
   // تابع handlePhotoChange برای مدیریت تغییرات در ورودی عکس
   const handlePhotoChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -40,7 +41,7 @@ export default function CreateRecipe() {
       // موارد بعد از شاخص درج:
       ...ingredients.slice(insertAt),
     ];
-    console.log("next", nextIngredients);
+    // console.log("next", nextIngredients);
 
     setIngredients(nextIngredients);
     setSingleIngredient("");
@@ -64,13 +65,23 @@ export default function CreateRecipe() {
       };
       try {
         const saveRecip = await fetch("/api/recipes", options);
-        setLoading(false)
         if (saveRecip.status === 200) {
-          console.log(saveRecip);
+          setLoading(false)
+          console.log(saveRecip.json());
+          setApiMessage("رسپی ساخته شد!")
+
+          setTimeout(() => {
+            setApiMessage("")
+          }, 4000);
         }
       } catch (error) {
         setLoading(false)
         console.log(error);
+        setApiMessage("مشکلی در ساخت رسپی به وجود آمد")
+
+        setTimeout(() => {
+          setApiMessage("")
+        }, 4000);
       }
     }
   };
@@ -183,11 +194,22 @@ export default function CreateRecipe() {
                 <Button
                   type="submit"
                   className="w-96 py-3 px-4 inline-flex justify-center items-center gap-2 rounded-md border border-transparent font-semibold bg-cyan-700 text-white hover:bg-cyan-500 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2 transition-all text-sm"
+                  disabled={loading}
                 >
+                  {
+                    loading && 
+                    <InboxArrowDownIcon width={20} />
+                  }
                   <span>ساخت رسپی</span>
                 </Button>
               </div>
             </form>
+            {apiMessage &&
+            <div className="flex w-96 mx-auto m-4 p-4 rounded bg-slate-50">
+              <p className=" text-gray-500 px-2">پیام سیستم:</p>
+               <p className=" text-green-600 font-bold">{apiMessage}</p>
+            </div>
+            }
           </section>
         </div>
       </div>

@@ -9,13 +9,12 @@ services:
         NEXT_PUBLIC_ENV_VARIABLE: ${NEXT_PUBLIC_ENV_VARIABLE}
     restart: always
     volumes:
-      - ./:/app
       - /app/node_modules
       - /app/.next
     ports:
       - "${PORT}:${PORT}"
     environment:
-      DB_LOCAL_URL: mongodb://mongo:27017/denizpazs
+      DB_LOCAL_URL: mongodb://mongo:27017/denizpaz
     depends_on:
       - mongo
     networks:
