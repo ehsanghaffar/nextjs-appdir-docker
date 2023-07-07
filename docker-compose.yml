@@ -33,8 +33,7 @@ services:
 
 networks:
   asgard:
-    external: true
+    # external: true
 
 volumes:
   data:
-    driver: local
