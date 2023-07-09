@@ -10,7 +10,7 @@ const options: any = {
 export const connectToDatabase = async () => {
   if (!connection.readyState) {
     // console.log('Connecting to ', DATABASE)
-    await mongoose.connect(DATABASE || "mongodb://mongo:27017/denizpaz", options)
+    await mongoose.connect(process.env.NEXT_PUBLIC_DB_LOCAL_URL, options)
     .then((c) => {
       console.log("Mongo Connected: ")
     })

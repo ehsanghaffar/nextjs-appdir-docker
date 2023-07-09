@@ -9,6 +9,7 @@ services:
         NEXT_PUBLIC_ENV_VARIABLE: ${NEXT_PUBLIC_ENV_VARIABLE}
     restart: always
     volumes:
+      - ./:/app/
       - /app/node_modules
       - /app/.next
     ports:
@@ -18,21 +19,29 @@ services:
     depends_on:
       - mongo
     networks:
-      - asgard
+      - MONGO
 
   mongo:
     container_name: mongo
     image: mongo:latest
     volumes:
-      - data:/data/db
+      - type: volume
+        source: MONGO_DATA
+        target: /data/db
+      - type: volume
+        source: MONGO_CONFIG
+        target: /data/configdb
     ports:
       - "27017:27017"
     networks:
-      - asgard
+      - MONGO
 
 networks:
-  asgard:
-    # external: true
+  MONGO:
+    name: MONGO
 
 volumes:
-  data:
+  MONGO_DATA:
+    name: MONGO_DATA
+  MONGO_CONFIG:
+    name: MONGO_CONFIG

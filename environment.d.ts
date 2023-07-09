@@ -2,6 +2,7 @@ declare namespace NodeJS {
   export interface ProcessEnv {
     readonly ENV_VARIABLE: string
     readonly NEXT_PUBLIC_ENV_VARIABLE: string
+    readonly NEXT_PUBLIC_DB_LOCAL_URL: string
 
     readonly DEVELOPMENT_ENV_VARIABLE: string
     readonly NEXT_PUBLIC_DEVELOPMENT_ENV_VARIABLE: string
