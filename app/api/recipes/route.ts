@@ -1,10 +1,6 @@
-
 import { NextResponse } from 'next/server';
-import { join } from "path";
-import { stat, writeFile } from "fs/promises";
 import { connectToDatabase } from "../../../lib/mongodb";
 import { Recipe } from "../../../models";
-import mime from 'mime';
 import { existsSync } from "fs";
 import fs from "fs/promises";
 import path from "path";
@@ -65,4 +61,16 @@ export async function POST(req: Request) {
     });
   }
 
+}
+
+export async function DELETE(req: any) {
+  const { id } = req.query;
+  try {
+    console.log("id", id)
+    const recipe = await Recipe.findByIdAndRemove(id)
+    console.log("re", recipe)
+    return NextResponse.json({status: 200, data: recipe})
+  } catch (error) {
+    return NextResponse.json({ status: 500, success: false, message: error });
+  }
 }
