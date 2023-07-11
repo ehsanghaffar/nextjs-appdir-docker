@@ -4,7 +4,7 @@ import HeaderLeftImage from '../public/header-leftt.png'
 import Image from "next/image";
 import { ArrowLeftIcon } from "@heroicons/react/24/solid";
 
-const HeaderBottom: React.FC = () => {
+const LandingHero: React.FC = () => {
 
   return (
     <section id="header-bottom">
@@ -37,4 +37,4 @@ const HeaderBottom: React.FC = () => {
   );
 };
 
-export default HeaderBottom;
+export default LandingHero
