@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import BackButton from "./ui/BackButton";
+import { SearchComponent } from "./Search";
 
 const Navbar: React.FC = () => {
   return (

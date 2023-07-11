@@ -19,6 +19,7 @@ const SingleRecipeTopSection = ({
       <section className="relative">
         <div className="recipe-header-pic">
           <img
+            height={400}
             className="recipe-header-img"
             src={sectionBackground}
             alt="header"
