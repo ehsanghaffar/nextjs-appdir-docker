@@ -3,7 +3,7 @@ services:
   web:
     build:
       context: .
-      dockerfile: develop.Dockerfile
+      dockerfile: Dockerfile
       args:
         ENV_VARIABLE: ${ENV_VARIABLE}
         NEXT_PUBLIC_ENV_VARIABLE: ${NEXT_PUBLIC_ENV_VARIABLE}
