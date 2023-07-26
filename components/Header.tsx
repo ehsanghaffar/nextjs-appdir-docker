@@ -14,27 +14,27 @@ const Navbar: React.FC = () => {
             <li className="hidden lg:block">
               <Link className="menu-links rounded-lg " href={"/"}>
                 {" "}
-                صفحه اصلی{" "}
+                Home{" "}
               </Link>
             </li>
 
             <li>
               <Link href={"recipes"} className="menu-links rounded-lg ">
                 {" "}
-                رسپی ها{" "}
+                Recipes{" "}
               </Link>
             </li>
 
             <li>
               <Link className="menu-links rounded-lg " href={"about"}>
                 {" "}
-                درباره ما{" "}
+                About{" "}
               </Link>
             </li>
             <li>
               <Link className="menu-links rounded-lg " href={"contact"}>
                 {" "}
-                ارتباط با ما{" "}
+                Contact{" "}
               </Link>
             </li>
             <BackButton />

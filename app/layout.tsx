@@ -9,8 +9,8 @@ import "./globals.css";
 library.add(fab, fas)
 
 export const metadata = {
-  title: "دنیز پز",
-  description: "به دنیز پز خوش آمدید",
+  title: "Recipe App",
+  description: "Welcome to Recpie app",
 };
 
 
@@ -19,9 +19,8 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  // رندر کردن کامپوننت‌های Navbar، children و Footer
   return (
-    <html lang="fa" dir="rtl">
+    <html lang="en">
       <body
         className={`${vazirmatn.className} flex flex-col min-h-screen`}
         suppressHydrationWarning={true}

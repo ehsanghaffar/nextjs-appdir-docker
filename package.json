@@ -1,7 +1,26 @@
 {
-  "name": "deniz-recipe",
+  "name": "next-appdir-docker",
   "version": "0.1.0",
   "private": true,
+  "author": {
+    "name": "Ehsan Ghaffar",
+    "email": "ghafari.5000@gmail.com",
+    "url": "https://ehsanghaffarii.ir"
+  },
+  "repository": {
+    "url": "https://github.com/ehsanghaffar/nextjs-appdir-docker"
+  },
+  "keywords": [
+    "nextjs",
+    "appdir",
+    "docker",
+    "next 13.4",
+    "recipe",
+    "persian",
+    "mongoose",
+    "mongodb",
+    "tailwindcss"
+  ],
   "scripts": {
     "dev": "next dev",
     "build": "next build",

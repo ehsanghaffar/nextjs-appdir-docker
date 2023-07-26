@@ -1,5 +1,5 @@
 "use client";
-import { ArrowLeftIcon } from "@heroicons/react/24/solid";
+import { ArrowRightIcon } from "@heroicons/react/24/solid";
 import { usePathname, useRouter } from "next/navigation";
 import React from "react";
 
@@ -13,8 +13,8 @@ const BackButton = () => {
           onClick={() => router.back()}
           className=" grid grid-cols-2 gap-2 items-center px-4 py-1  rounded"
         >
-          <span>بازگشت</span>
-          <ArrowLeftIcon width={20} />
+          <span>Back</span>
+          <ArrowRightIcon width={18} />
         </button>
       )}
     </>

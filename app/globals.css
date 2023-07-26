@@ -244,7 +244,7 @@ html {
 }
 
 .menu li:not(:last-child) {
-  border-left: 0.1rem solid #86898a98;
+  border-right: 0.1rem solid #86898a98;
 }
 
 .menu li a {
@@ -279,29 +279,12 @@ html {
 
 }
 
-#header-tile {
-  font-size: 7.5rem;
-  margin: 0;
-  padding: 3rem 0 5rem 0;
-  color: #e32a22;
-}
-
 .header-des {
   color: #525c60;
   font-size: 1.35rem;
   font-weight: 600;
-  padding-bottom: 4rem;
 }
 
-.header-link {
-  text-decoration: none;
-  font-size: 1.5rem;
-  color: #fff;
-  background-color: #274C5B;
-  padding: 1rem 2rem;
-  border-radius: 1rem;
-  transition: all 0.2s;
-}
 
 .header-link:hover {
   background-color: #12232b;
@@ -536,11 +519,6 @@ html {
 
 .contactus-right-info-img {
   width: 2.5rem;
-}
-
-.contactus-left-img {
-  width: 30rem;
-  border-radius: 5rem;
 }
 
 /* subscribe section */

@@ -32,13 +32,13 @@ const SearchPage = () => {
     <>
     <SingleRecipeTopSection 
         sectionBackground={"/search-page.jpg"} 
-        recipeName="... جستجوی رسپی ها ..."
-        recipeDesc="اگه دنبال رسپی خاصی هستی کافیه جستجو کنی ..."
+        recipeName="Searching Recipes"
+        recipeDesc="Discover, Cook, and Savor Delicious Recipes!"
       />
     <SearchComponent classes='bg-white' />
     <div className="grid grid-cols-5 gap-4 p-10">
       {
-        searches?.length === 0 && <p>چیزی پیدا نشد...</p>
+        searches?.length === 0 && <p>Nothing founded ...</p>
       }
       {
         searches && searches?.map((recipes: GetAllRecipesResponse) => (

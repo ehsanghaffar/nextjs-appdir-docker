@@ -8,16 +8,17 @@ export default function NotFound() {
           <h1 className="font-black text-gray-200 text-9xl">۴۰۴</h1>
 
           <p className="text-2xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-            آخ ببخشید!
+            Sorry !
           </p>
 
-          <p className="mt-4 text-gray-500">این صفحه وجود ندارد</p>
-
+          <p className="mt-4 text-gray-500">
+            Page do not exist
+            </p>
           <Link
             href={"/"}
             className="inline-block px-5 py-3 mt-6 text-sm font-medium text-white bg-cyan-800 rounded hover:bg-cyan-600 focus:outline-none focus:ring"
           >
-            بازگشت به صفحه‌اصلی
+            Home page
           </Link>
         </div>
       </div>

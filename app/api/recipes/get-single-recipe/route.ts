@@ -2,7 +2,6 @@ import { NextResponse } from "next/server";
 import { Recipe } from "../../../../models";
 
 export const dynamic = 'force-dynamic'
-// ایجاد درخواست GET برای دریافت رسپی بر اساس آی‌دی
 export async function GET(req: Request) {
   try {
     const { searchParams } = new URL(req.url);

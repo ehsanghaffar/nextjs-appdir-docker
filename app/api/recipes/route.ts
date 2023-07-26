@@ -7,7 +7,6 @@ import path from "path";
 
 connectToDatabase();
 
-// ایجاد درخواست GET برای دریافت لیست رسپی‌ها
 export async function GET() {
   try {
     const recipes = Recipe.find();
@@ -20,7 +19,6 @@ export async function GET() {
   }
 }
 
-// ایجاد درخواست POST برای ایجاد رسپی جدید
 export async function POST(req: Request) {
   const data = await req.formData();
   const file: File | null = data.get('photo') as unknown as File;
@@ -50,10 +48,10 @@ export async function POST(req: Request) {
       steps: data.get('steps'),
       photo: `/api/file/${filename}`
     }
-    
+
     const recipe = new Recipe(newRecipe);
     const save = await recipe.save();
-    return NextResponse.json({ status: 200, data: save});
+    return NextResponse.json({ status: 200, data: save });
   } catch (error) {
     console.log(error);
     return NextResponse.json('error', {
@@ -69,7 +67,7 @@ export async function DELETE(req: any) {
     console.log("id", id)
     const recipe = await Recipe.findByIdAndRemove(id)
     console.log("re", recipe)
-    return NextResponse.json({status: 200, data: recipe})
+    return NextResponse.json({ status: 200, data: recipe })
   } catch (error) {
     return NextResponse.json({ status: 500, success: false, message: error });
   }

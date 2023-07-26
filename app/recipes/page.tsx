@@ -8,8 +8,8 @@ const Recipes = () => {
     <>
       <SingleRecipeTopSection 
         sectionBackground={"/header-recipe.png"} 
-        recipeName="... رسپی ها ..."
-        recipeDesc="دنبال یه دسر خاص و خوشمزه ای ؟ سریع پیداش کن ..."
+        recipeName="Recipes"
+        recipeDesc="Discover, Cook, and Savor Delicious Recipes!"
       />
       <SearchComponent classes="bg-[#F9f8f8]" />
       <section id="recipes">

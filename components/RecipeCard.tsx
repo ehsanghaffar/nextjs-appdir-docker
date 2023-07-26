@@ -1,23 +1,16 @@
-// وارد کردن کامپوننت Link از فایل next/link
 import Link from "next/link";
 
-// وارد کردن کتابخانه React
 import React from "react";
 
-// وارد کردن کامپوننت Button از فایل ui/Button
 import Button from "./ui/Button";
 import { Recipe } from "../types/Recipe";
-import { ArrowLeftIcon } from "@heroicons/react/24/solid";
-import path from "path";
+import { ArrowRightIcon } from "@heroicons/react/24/solid";
 
-// تعریف ویژگی‌های RecipeCardProps
 interface RecipeCardProps {
   recipe: Recipe | any;
 }
 
-// تعریف کامپوننت RecipeCard
 const RecipeCard = ({ recipe }: RecipeCardProps) => {
-  
   return (
     <>
       <Link href={`recipes/${recipe?._id}`}>
@@ -31,14 +24,16 @@ const RecipeCard = ({ recipe }: RecipeCardProps) => {
             <p className="mb-2 text-lg font-medium text-gray-800">
               {recipe?.name}
             </p>
-            <p className="text-xs text-gray-600">{recipe?.description.substring(0, 60)}...</p>
+            <p className="text-xs text-gray-600">
+              {recipe?.description.substring(0, 60)}...
+            </p>
             <div className="flex flex-wrap items-center mt-6 justify-starts">
               <Button
                 type="button"
                 className="py-3 px-4 flex gap-4 justify-center items-center bg-slate-700 hover:bg-slate-800 focus:ring-slate-500 focus:ring-offset-slate-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg "
               >
-                <span>دیدن رسپی</span>
-                <ArrowLeftIcon width={16} />
+                <span>Recipe page</span>
+                <ArrowRightIcon width={16} />
               </Button>
             </div>
           </div>
@@ -48,5 +43,4 @@ const RecipeCard = ({ recipe }: RecipeCardProps) => {
   );
 };
 
-// صادر کردن کامپوننت RecipeCard به عنوان کامپوننت پیشفرض
 export default RecipeCard;

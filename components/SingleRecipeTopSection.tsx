@@ -1,18 +1,14 @@
-// وارد کردن کتابخانه React
 import React from "react";
-
-// تعریف ویژگی‌های SingleRecipeTopSectionProps
 interface SingleRecipeTopSectionProps {
   recipeName?: string;
   recipeDesc?: string;
   sectionBackground?: string;
 }
 
-// تعریف کامپوننت SingleRecipeTopSection
 const SingleRecipeTopSection = ({
   recipeName,
   recipeDesc,
-  sectionBackground
+  sectionBackground,
 }: SingleRecipeTopSectionProps) => {
   return (
     <>
@@ -34,5 +30,4 @@ const SingleRecipeTopSection = ({
   );
 };
 
-// صادر کردن کامپوننت SingleRecipeTopSection به عنوان کامپوننت پیشفرض
 export default SingleRecipeTopSection;

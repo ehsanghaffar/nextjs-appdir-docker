@@ -6,10 +6,9 @@ const options: any = {
   useNewUrlParser: true
 }
 
-// برقراری ارتباط با پایگاه داده MongoDB
 export const connectToDatabase = async () => {
   if (!connection.readyState) {
-    // console.log('Connecting to ', DATABASE)
+  
     await mongoose.connect(process.env.NEXT_PUBLIC_DB_LOCAL_URL, options)
     .then((c) => {
       console.log("Mongo Connected: ")
