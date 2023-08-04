@@ -36,6 +36,7 @@ const SingleRecipeMain = ({
               src={recipePhoto}
               className="rounded-xl"
               width={300}
+              height={300}
               alt={"deniz recipe"}
             />
           </div>

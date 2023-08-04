@@ -4,8 +4,32 @@ import HeaderBottom from "../components/HeaderBottom";
 import LandingSection from "../components/LandingSection";
 import LatestRecipes from "../components/LatestRecipes";
 import Button from "../components/ui/Button";
+import { Metadata } from "next";
 
-// تعریف کامپوننت Home
+export const metadata: Metadata = {
+  title: "Recipe App",
+  description: "Welcome to Recpie app",
+  applicationName: "RecipeApp",
+  authors:[
+    {
+      name: "Ehsan Ghaffar",
+      url: "https://ehsanghaffarii.ir"
+    }
+  ],
+  creator: "Ehsan Ghaffar",
+  verification: {
+    google: "aG69rfEfYwvFjNKS3C-jUj60PsqRr2LO9lHyKw0wNFE"
+  },
+  openGraph: {
+    title: 'Nextjs Appdir Recipe App',
+    description: 'Recipe App created with next.js 13.4',
+    type: 'article',
+    publishedTime: '2023-01-01T00:00:00.000Z',
+    authors: ['Ehsan Ghaffar', 'Eindev'],
+  },
+
+};
+
 export default function Home() {
   return (
     <>

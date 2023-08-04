@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import HeaderLeftImage from '../public/header-leftt.png'
+import HeaderLeftImage from '../public/landing-header-image.png'
 import Image from "next/image";
 import {  ArrowRightIcon } from "@heroicons/react/24/solid";
 
@@ -32,8 +32,11 @@ const LandingHero: React.FC = () => {
         {/* <img src="header-leftt.png" alt="header" className="header-left-img" /> */}
         <Image
           src={HeaderLeftImage}
-          alt="Deniz Paz"
+          alt="Discover, Cook, and Savor Delicious Recipes!"
           width={450}
+          height={450}
+          placeholder="blur"
+          priority
           />
       </div>
     </div>
