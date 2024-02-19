@@ -4,7 +4,7 @@ export interface IRecipe extends Document {
   name: string;
   description: string;
   ingredients?: Ingredients[];
-  photo: File | null;
+  photo: File | null | string;
   steps: string;
 }
 
