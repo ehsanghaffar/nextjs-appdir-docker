@@ -35,3 +35,4 @@ yarn-error.log*
 /data
 public/uploads/recipes/*
 upload/*
+.env
